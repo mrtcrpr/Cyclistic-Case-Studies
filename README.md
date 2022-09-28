@@ -17,6 +17,7 @@ After pre-cleaning the data, I moved on to the actual cleaning. Too much noise a
 https://github.com/mrtcrpr/Cyclistic-Case-Studies/blob/main/cleaning_analysis.sql
 
 I have completed the cleaning and analysis phase. In the process, I had already formed an insight. In order for these insights to be more descriptive and understandable, the data needed to be visualized. I also used Tableau Desktop for this visualization process. I visualized the data in a clear and understandable way as I went. I also made what I wanted to tell more understandable by creating a storytelling in this application. You can access the dashboards and storytelling from the links below. 
+
 Dashboards: https://public.tableau.com/app/profile/mrtcrpr/viz/CyclisticCaseStudy-Dashboards/Dashboard1 
 
 Storytelling: https://public.tableau.com/app/profile/mrtcrpr/viz/CyclisticCaseStudy-Storytelling/Story1
