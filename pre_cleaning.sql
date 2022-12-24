@@ -1,7 +1,7 @@
 /*
  First of all, we need to connect 12 separate data sets of 2021 and turn them into a single table.
- I created a new table with the same number of columns and the same column names as the datasets I have and ı named '[2021_combined_data]'.
- Then ı connected the 12 month datasets together using union all.
+ I created a new table with the same number of columns and the same column names as the datasets I have and I named '[2021_combined_data]'.
+ Then I connected the 12 month datasets together using union all.
  */
 INSERT INTO
   [2021_combined_data]
