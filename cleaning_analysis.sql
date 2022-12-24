@@ -3,22 +3,17 @@
  RIDE_ID
  We need to clean 457 rows that are not 16 characters.
  */
-DELETE FROM
-  [2021_combined_data]
-WHERE
-  len(ride_id) != 16;
+DELETE FROM [2021_combined_data]
+WHERE LEN(ride_id) != 16;
 -- 457 rows cleaned.
 
 /*
  RIDEABLE_TYPE
  We will convert docked_bike to classic_bike. Because these are same thing.
  */
-UPDATE
-  [2021_combined_data]
-SET
-  rideable_type = 'classic_bike'
-WHERE
-  rideable_type = 'docked_bike';
+UPDATE [2021_combined_data]
+SET rideable_type = 'classic_bike'
+WHERE rideable_type = 'docked_bike';
 -- 312316 docked_bike rows converted to classic_bike.
 
 /*
@@ -26,22 +21,17 @@ WHERE
  If you remember, we need to delete some lines.
  In these lines, some ended_at data has an earlier date than started_at data.
  */
-DELETE FROM
-  [2021_combined_data]
-WHERE
-  ended_at <= started_at;
+DELETE FROM [2021_combined_data]
+WHERE ended_at <= started_at;
 -- 653 rows deleted.
+
 -- In addition, driving times should not be less than 1 minute and more than 1 day. Such values are outliers.
-DELETE FROM
-  [2021_combined_data]
-WHERE
-  cast(ended_at - started_at AS time) < '00:01:00';
+DELETE FROM [2021_combined_data]
+WHERE CAST(ended_at - started_at AS time) < '00:01:00';
 -- 84577 rows deleted for driving times less than 1 minute.
 
-DELETE FROM
-  [2021_combined_data]
-WHERE
-  DATEDIFF(MINUTE, started_at, ended_at) > 1440;
+DELETE FROM [2021_combined_data]
+WHERE DATEDIFF(MINUTE, started_at, ended_at) > 1440;
 -- 4012 rows deleted for driving times more than 1 day.
 
 /*
@@ -51,41 +41,28 @@ WHERE
  Also there is 3 missing rows. It should be fixed. 
  And we have 'Temp' values trailing of the station names. We need to delete this rows.
  */
-UPDATE
-  [2021_combined_data]
-SET
-  start_station_name = 'Wood St & Milwaukee Ave'
-WHERE
-  start_station_id = '13221';
+UPDATE [2021_combined_data]
+SET start_station_name = 'Wood St & Milwaukee Ave'
+WHERE start_station_id = '13221';
 
-UPDATE
-  [2021_combined_data]
-SET
-  start_station_name = 'Hegewisch Metra Station'
-WHERE
-  start_station_id = '20215';
+UPDATE [2021_combined_data]
+SET start_station_name = 'Hegewisch Metra Station'
+WHERE start_station_id = '20215';
 
-UPDATE
-  [2021_combined_data]
-SET
-  start_station_name = 'Clinton St & Roosevelt Rd'
-WHERE
-  start_station_id = 'WL-008';
+UPDATE [2021_combined_data]
+SET start_station_name = 'Clinton St & Roosevelt Rd'
+WHERE start_station_id = 'WL-008';
 -- 3 missing rows fixed.
 
-DELETE FROM
-  [2021_combined_data]
-WHERE
-  start_station_name IS NULL
+DELETE FROM [2021_combined_data]
+WHERE start_station_name IS NULL
   OR start_station_id IS NULL
   OR end_station_name IS NULL
   OR end_station_id IS NULL;
 -- At least 1 null value in these columns has been deleted.
 
-DELETE FROM
-  [2021_combined_data]
-WHERE
-  start_station_name LIKE '%temp%'
+DELETE FROM [2021_combined_data]
+WHERE start_station_name LIKE '%temp%'
   OR end_station_name LIKE '%temp%';
 -- 47307 'Temp' rows deleted from start and end station names. 
 
@@ -93,10 +70,8 @@ WHERE
  START_LAT and START_LNG and END_LAT and END_LNG
  These columns have some null values. These null values need to be deleted.
  */
-DELETE FROM
-  [2021_combined_data]
-WHERE
-  start_lat IS NULL
+DELETE FROM [2021_combined_data]
+WHERE start_lat IS NULL
   OR start_lng IS NULL
   OR end_lat IS NULL
   OR end_lng IS NULL;
