@@ -4,14 +4,14 @@ This project is the capstone project of the Google Data Analytics training on th
 
 Ask, prepare, process, analyze, share and act are completed by following the steps.
 
+# About the company
+
+In 2016, Cyclistic launched a successful bike-share offering. Since then, the program has grown to a fleet of 5,824 bicycles that are geotracked and locked into a network of 692 stations across Chicago. The bikes can be unlocked from one station and returned to any other station in the system anytime. Our managers do their best for the growth of the company. The biggest step forward is to convert casual riders into annual members.
+
 # Dataset
 
 You can access the dataset I used from the link below. This dataset consists of 12 separate zip files. Datasets from 202101 to 202112 were used.
 https://divvy-tripdata.s3.amazonaws.com/index.html
-
-# About the company
-
-In 2016, Cyclistic launched a successful bike-share offering. Since then, the program has grown to a fleet of 5,824 bicycles that are geotracked and locked into a network of 692 stations across Chicago. The bikes can be unlocked from one station and returned to any other station in the system anytime. Our managers do their best for the growth of the company. The biggest step forward is to convert casual riders into annual members.
 
 # Goals & Steps
 
